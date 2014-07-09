@@ -12,12 +12,18 @@ pkg_check_modules(CHECK check)
 if ("${CHECK_FOUND}")
     enable_testing()
 
+    add_custom_target(check COMMAND ${CMAKE_CTEST_COMMAND})
+
+    include_directories(
+        ${CHECK_INCLUDE_DIRS}
+    )
+
     file(GLOB tests_src ${PROJECT_SOURCE_DIR}/tests/*)
 
     foreach(test_src ${tests_src})
         get_filename_component(test_name ${test_src} NAME_WE)
         add_executable(${test_name} ${test_src})
-        message(WARNING ${CHECK_LIBRARIES})
+        add_dependencies(check ${test_name})
         target_link_libraries(${test_name} cmisc ${CHECK_LIBRARIES})
 
         add_test(${test_name} ${test_name})
