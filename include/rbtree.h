@@ -6,7 +6,7 @@ enum Color {
 };
 
 struct RBTreeNode {
-    enum Color;
+    enum Color color;
     int value;
     struct RBTreeNode *parent;
     struct RBTreeNode *left_child;
