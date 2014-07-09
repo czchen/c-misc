@@ -1,4 +1,6 @@
 /*.cmake
 /CMakeCache.txt
 /CMakeFiles
+/lib*
 /Makefile
+/run-tests
