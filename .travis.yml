@@ -6,3 +6,7 @@ compiler:
 install:
     - sudo apt-get update -qq
     - sudo apt-get install -qq check
+
+script:
+    - cmake .
+    - make check
