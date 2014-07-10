@@ -24,7 +24,8 @@ if ("${CHECK_FOUND}")
         get_filename_component(test_name ${test_src} NAME_WE)
         add_executable(${test_name} ${test_src})
         add_dependencies(check ${test_name})
-        target_link_libraries(${test_name} cmisc ${CHECK_LIBRARIES})
+        # FIXME: Why pthread is not in ${CHECK_LIBRARIES}?
+        target_link_libraries(${test_name} cmisc ${CHECK_LIBRARIES} pthread)
 
         add_test(${test_name} ${test_name})
     endforeach()
