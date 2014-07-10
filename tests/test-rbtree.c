@@ -6,8 +6,8 @@ START_TEST(test_init_destroy)
 {
 
     struct RBTree tree;
-    ck_assert_int_eq(init_rbtree(&tree), 0);
-    destroy_rbtree(&tree);
+    ck_assert_int_eq(rb_init(&tree), 0);
+    rb_destroy(&tree);
 }
 END_TEST
 
@@ -15,7 +15,7 @@ int main()
 {
     Suite *suite = suite_create("test-rbtree");
 
-    TCase *tcase = tcase_create("");
+    TCase *tcase = tcase_create("init & destroy");
     tcase_add_test(tcase, test_init_destroy);
 
     suite_add_tcase(suite, tcase);

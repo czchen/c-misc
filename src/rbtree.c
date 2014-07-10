@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-int init_rbtree(struct RBTree *tree)
+int rb_init(struct RBTree *tree)
 {
     if (!tree) {
         return -1;
@@ -13,7 +13,7 @@ int init_rbtree(struct RBTree *tree)
     return 0;
 }
 
-void destroy_rbtree(struct RBTree *tree)
+void rb_destroy(struct RBTree *tree)
 {
     if (tree) {
         // FIXME: free tree->root

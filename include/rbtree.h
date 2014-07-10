@@ -16,3 +16,6 @@ struct RBTreeNode {
 struct RBTree {
     struct RBTreeNode *root;
 };
+
+int rb_init(struct RBTree *tree);
+void rb_destroy(struct RBTree *tree);
