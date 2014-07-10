@@ -3,4 +3,5 @@
 /CMakeFiles
 /lib*
 /Makefile
-/run-tests
+/test-*
+/Testing
