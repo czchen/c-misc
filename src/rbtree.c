@@ -79,7 +79,7 @@ int rb_insert(struct RBTree *tree, int value)
         return 0;
     }
 
-    *node = new_tree_node(,value);
+    *node = new_tree_node(value);
     if (!node) {
         return -1;
     }
